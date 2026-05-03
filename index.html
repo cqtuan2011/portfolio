@@ -356,13 +356,19 @@
     position: absolute;
     top: 12px; left: 12px;
     z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    max-width: calc(100% - 80px);
+  }
+  .game-card .role span {
     font-family: var(--mono);
-    font-size: 10px;
+    font-size: 9px;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 4px 8px;
-    border-radius: 4px;
-    background: rgba(0,0,0,0.55);
+    padding: 3px 6px;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.6);
     backdrop-filter: blur(4px);
     color: var(--accent);
   }

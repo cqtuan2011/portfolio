@@ -46,15 +46,13 @@
         ? `<img src="${g.cover}" alt="${g.name} icon" loading="lazy"/>`
         : window.renderCover(g);
       card.innerHTML = `
-        <div class="role">${g.role}</div>
+        <div class="role">${g.role.split(' · ').map(t => `<span>${t}</span>`).join('')}</div>
         <div class="platforms">${g.platforms.map(platPill).join('')}</div>
         <div class="thumb">${thumbContent}</div>
         <div class="meta">
           <div class="name">${g.name}</div>
           <div class="sub">
             <span>${g.tagline}</span>
-            <span class="sep">·</span>
-            <span>${g.year}</span>
           </div>
         </div>
       `;
@@ -173,9 +171,7 @@
       <h3 class="m-title">${g.name}</h3>
       <p class="m-tagline">${g.tagline}</p>
       <div class="m-chips">
-        <span class="year">${g.year}</span>
         ${g.platforms.map(p => `<span>${p}</span>`).join('')}
-        ${g.genres.slice(0,2).map(genre => `<span>${genre}</span>`).join('')}
       </div>
       <div class="m-section-label">What I built</div>
       <ul class="m-bullets">
